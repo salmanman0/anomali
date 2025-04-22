@@ -28,8 +28,9 @@ function Home(){
   
   function hashStringToIndex(str, max) {
     let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = (hash << 5) - hash + str.charCodeAt(i);
+    let val = str.toLowerCase()
+    for (let i = 0; i < val.length; i++) {
+      hash = (hash << 5) - hash + val.charCodeAt(i);
       hash |= 0;
     }
     return Math.abs(hash) % max;
@@ -52,7 +53,7 @@ function Home(){
         <div className="w-full h-full flex flex-col justify-center items-center bg-indigo-400">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-zinc-100 font-medium">ANOMALI</h1>
           <p className="text-xs sm:text-sm md:text-md lg:text-lg font-medium mt-3 text-white tracking-[.2em]">ANOMALI SEPERTI APAKAH ANDA</p>
-          <a className="text-xs m-2 text-white py-2 px-4 bg-indigo-700 rounded-md absolute top-0 left-0" href="https://www.instagram.com/salmanananda.ms/">by @salmanananda.ms</a>
+          <a className="text-xs m-4 text-white py-2 px-4 bg-indigo-700 rounded-md absolute top-0 left-0" href="https://www.instagram.com/salmanananda.ms/">by @salmanananda.ms</a>
           
           <div className="flex flex-row items-center mt-4 ">
             <Input placeholder={"nama anda"} style={"h-10 justify-self-start border border-gray-300"} ref={inputRef}/>
