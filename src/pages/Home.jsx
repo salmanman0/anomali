@@ -25,19 +25,27 @@ function Home(){
     "Nataligai Triliuna",
     "Mul Mul Mul Yoyo Solo Lolo"
   ];
+  
+  function hashStringToIndex(str, max) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      hash = (hash << 5) - hash + str.charCodeAt(i);
+      hash |= 0;
+    }
+    return Math.abs(hash) % max;
+  }
   const handleClick = () => {
     const text = inputRef.current.value.trim();
     if (text !== "") {
       dispatch(hapusSemua());
-  
-      const rand = 1 + Math.floor(Math.random() * jenisList.length);
-      const jenis = jenisList[rand-1];
-  
-      dispatch(tambahNama({ id: rand, nama: text, jenis: jenis }));
+      const index = hashStringToIndex(text, jenisList.length);
+      const jenis = jenisList[index];
+      dispatch(tambahNama({ id: index + 1, nama: text, jenis: jenis }));
       inputRef.current.value = "";
     }
     inputRef.current.focus();
   };
+  
   return(
     <>
       <div className="h-screen w-screen grid grid-rows-2">
