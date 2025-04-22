@@ -43,8 +43,9 @@ function Home(){
       <div className="h-screen w-screen grid grid-rows-2">
         <div className="w-full h-full flex flex-col justify-center items-center bg-indigo-400">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-zinc-100 font-medium">ANOMALI</h1>
-
           <p className="text-xs sm:text-sm md:text-md lg:text-lg font-medium mt-3 text-white tracking-[.2em]">ANOMALI SEPERTI APAKAH ANDA</p>
+          <a className="text-xs m-2 text-white py-2 px-4 bg-indigo-700 rounded-md absolute top-0 left-0" href="https://www.instagram.com/salmanananda.ms/">by @salmanananda.ms</a>
+          
           <div className="flex flex-row items-center mt-4 ">
             <Input placeholder={"nama anda"} style={"h-10 justify-self-start border border-gray-300"} ref={inputRef}/>
             <Button label={"Submit"} style="bg-blue-600 ml-4 text-white" onClick={handleClick}/>
@@ -52,7 +53,7 @@ function Home(){
         </div>
         <div className="w-full max-h-screen flex justify-center items-center p-8">
           {data.map((item) => (
-            <div key={item.id} className="bg-white rounded-xl shadow-lg p-6 mb-4 flex flex-col items-center w-full text-center">
+            <div key={item.id} className="bg-white rounded-xl shadow-lg p-6 mb-4 flex flex-col items-center lg:w-1/3 md:w-2/3 text-center">
               <p className="text-xl font-semibold text-gray-700">
                 Selamat <span className="text-indigo-500">{item.nama}</span>!
               </p>
