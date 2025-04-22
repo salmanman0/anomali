@@ -5,6 +5,7 @@ import Title from "../components/Title";
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { hapusSemua, tambahNama } from "../slice/dataSlice";
+import AdBanner from "../components/AdBanner";
 function Home(){
   Title("Home - Anomali")
   const inputRef = useRef();
@@ -61,6 +62,9 @@ function Home(){
           </div>
         </div>
         <div className="w-full max-h-screen flex justify-center items-center p-8">
+        <div className="mr-4">
+          <AdBanner />
+        </div>
           {data.map((item) => (
             <div key={item.id} className="bg-white rounded-xl shadow-lg p-6 mb-4 flex flex-col items-center lg:w-1/3 md:w-2/3 text-center">
               <p className="text-xl font-semibold text-gray-700">
@@ -72,6 +76,9 @@ function Home(){
               <img src={`/assets/${item.id}.png`} alt={item.jenis} loading="lazy" decoding="async" className="w-64 h-64 object-contain rounded-md border border-gray-300"/>
             </div>
           ))}
+        <div className="mr-4">
+          <AdBanner />
+        </div>
         </div>
       </div>
     </>
