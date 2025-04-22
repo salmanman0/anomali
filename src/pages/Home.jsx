@@ -16,7 +16,14 @@ function Home(){
     "Lil Lil Lil Bahlil",
     "Tralalelo Tralala",
     "Tripa Tropi",
-    "Ga Ram Ram Ram Dan Madu Dung Dung"
+    "Ga Ram Ram Ram Dan Madu Dung Dung",
+    "Aniesini Gusini",
+    "Fufubaba Fufufini",
+    "Megatoto Walala Tibebe",
+    "Corbuziero Dagusquero",
+    "Prabowono Subiantono",
+    "Nataligai Triliuna",
+    "Mul Mul Mul Yoyo Solo Lolo"
   ];
   const handleClick = () => {
     const text = inputRef.current.value.trim();

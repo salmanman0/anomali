@@ -5,5 +5,8 @@ const store = configureStore({
     data: dataReducer
   },
 })
-
+store.subscribe(() => {
+  const state = store.getState();
+  localStorage.setItem('datas', JSON.stringify(state.data.list));
+});
 export default store;
